@@ -13,10 +13,10 @@ import java.util.Map;
 
 public class RegistroRequest extends StringRequest {
 
-    private static final String REQUEST_REGISTRO_URL = "https://doevida.hostei.com/Registro.php";
+    private static final String REQUEST_REGISTRO_URL = "http://doevida.pe.hu/Registro.php";
     private Map<String, String> params;
 
-    public RegistroRequest(String nome, String sobrenome, String nome_usuario, int idade, String senha, Response.Listener<String> listener) {
+    public RegistroRequest(String nome, String sobrenome, String nome_usuario, String senha, int idade, Response.Listener<String> listener) {
         super(Method.POST, REQUEST_REGISTRO_URL, listener, null);
         params = new HashMap<>();
         params.put("nome", nome);

@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("fabastos.000webhostapp.com", "id1248671_doacaodb", "projetodoacao", "id1248671_projetodoacao");
+    $con = mysqli_connect("mysql.hostinger.com.br", "u510759690_opet", "projetodoacao", "u510759690_doadb");
     
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];

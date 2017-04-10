@@ -27,11 +27,11 @@ public class RegistroActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        final EditText etIdade = (EditText) findViewById(R.id.nIdade);
         final EditText etNome = (EditText) findViewById(R.id.etNome);
         final EditText etSobrenome = (EditText) findViewById(R.id.etSobrenome);
         final EditText etUsuario = (EditText) findViewById(R.id.etUsuario);
         final EditText etSenha = (EditText) findViewById(R.id.etSenha);
+        final EditText etIdade = (EditText) findViewById(R.id.nIdade);
         final Button btnRegistro = (Button) findViewById(R.id.btnRegistrar);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +69,7 @@ public class RegistroActivity extends Activity {
                     }
                 };
 
-                RegistroRequest registroRequest = new RegistroRequest(nome, sobrenome, nome_usuario, idade, senha, responseListener);
+                RegistroRequest registroRequest = new RegistroRequest(nome, sobrenome, nome_usuario, senha, idade, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegistroActivity.this);
                 queue.add(registroRequest);
             }
