@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -52,7 +51,7 @@ public class RegistroActivity extends Activity {
                             boolean sucesso = jsonResponse.getBoolean("sucesso");
 
                             if (sucesso){
-                                Intent intent = new Intent(RegistroActivity.this, RegistroActivity.class);
+                                Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
                                 RegistroActivity.this.startActivity(intent);
                             }
                             else {

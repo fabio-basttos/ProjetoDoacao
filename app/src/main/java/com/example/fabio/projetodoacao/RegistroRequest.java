@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class RegistroRequest extends StringRequest {
 
-    private static final String REQUEST_REGISTRO_URL = "http://doevida.pe.hu/Registro.php";
+    private static final String REQUEST_REGISTRO_URL = "http://doevida.pe.hu/registro.php";
     private Map<String, String> params;
 
     public RegistroRequest(String nome, String sobrenome, String nome_usuario, String senha, int idade, Response.Listener<String> listener) {
