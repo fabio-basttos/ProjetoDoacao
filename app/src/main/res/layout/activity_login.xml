@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/etUsuario"
+        android:id="@+id/etUsuarioLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,7 +17,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etSenha"
+        android:layout_below="@+id/etSenhaLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
         android:text="Logar" />
@@ -32,12 +32,12 @@
         android:text="REGISTRE-SE" />
 
     <EditText
-        android:id="@+id/etSenha"
+        android:id="@+id/etSenhaLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etUsuario"
-        android:layout_alignStart="@+id/etUsuario"
-        android:layout_below="@+id/etUsuario"
+        android:layout_alignLeft="@+id/etUsuarioLogin"
+        android:layout_alignStart="@+id/etUsuarioLogin"
+        android:layout_below="@+id/etUsuarioLogin"
         android:layout_marginTop="19dp"
         android:ems="10"
         android:hint="Senha"

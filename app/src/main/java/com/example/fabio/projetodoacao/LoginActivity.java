@@ -27,8 +27,8 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText etUsuario = (EditText) findViewById(R.id.etUsuario);
-        final EditText etSenha = (EditText) findViewById(R.id.etSenha);
+        final EditText etUsuarioLogin = (EditText) findViewById(R.id.etUsuarioLogin);
+        final EditText etSenhaLogin = (EditText) findViewById(R.id.etSenhaLogin);
         final Button btnLogin = (Button) findViewById(R.id.btnLogin);
         final TextView registrarLink = (TextView) findViewById(R.id.tvRegistrar);
 
@@ -43,8 +43,8 @@ public class LoginActivity extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String nome_usuario = etUsuario.getText().toString();
-                final String senha = etSenha.getText().toString();
+                final String nome_usuario = etUsuarioLogin.getText().toString();
+                final String senha = etSenhaLogin.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
