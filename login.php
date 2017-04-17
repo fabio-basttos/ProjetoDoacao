@@ -15,13 +15,13 @@
     $response["sucesso"] = false;  
     
     while(mysqli_stmt_fetch($statement)){
-        $response["success"] = true;  
+        $response["sucesso"] = true;  
         $response["nome"] = $nome;
 		$responde["sobrenome"] = $sobrenome;
-		$response["usuario"] = $nome_usuario;
+		$response["nome_usuario"] = $nome_usuario;
 		$response["senha"] = $senha;
         $response["idade"] = $idade;
     }
-    
-    echo json_encode($response);
+	//echo $nome_usuario;
+	echo json_encode($response);
 ?>

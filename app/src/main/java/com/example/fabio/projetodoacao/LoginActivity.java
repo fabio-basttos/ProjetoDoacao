@@ -59,7 +59,7 @@ public class LoginActivity extends Activity {
 
                                 Intent intent = new Intent(LoginActivity.this, AreaUsuarioActivity.class);
                                 intent.putExtra("nome", nome);
-                                intent.putExtra("nome_usuário", nome_usuario);
+                                intent.putExtra("nome_usuario", nome_usuario);
                                 intent.putExtra("idade", idade);
 
                                 LoginActivity.this.startActivity(intent);
