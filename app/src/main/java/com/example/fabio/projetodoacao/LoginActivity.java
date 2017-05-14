@@ -57,10 +57,10 @@ public class LoginActivity extends Activity {
                                 String nome = jsonResponse.getString("nome");
                                 int idade = jsonResponse.getInt("idade");
 
-                                Intent intent = new Intent(LoginActivity.this, AreaUsuarioActivity.class);
-                                intent.putExtra("nome", nome);
+                                Intent intent = new Intent(LoginActivity.this, DoacaoActivity.class);
+                                /*intent.putExtra("nome", nome);
                                 intent.putExtra("nome_usuario", nome_usuario);
-                                intent.putExtra("idade", idade);
+                                intent.putExtra("idade", idade);*/
 
                                 LoginActivity.this.startActivity(intent);
 

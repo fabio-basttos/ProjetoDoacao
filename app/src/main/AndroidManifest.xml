@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".RegistroActivity" />
         <activity android:name=".AreaUsuarioActivity"></activity>
+        <activity android:name=".DoacaoActivity"/>
     </application>
 
 </manifest>

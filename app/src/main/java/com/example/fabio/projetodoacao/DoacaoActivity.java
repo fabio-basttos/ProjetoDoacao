@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,7 +29,7 @@ public class DoacaoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doacao);
 
-        final Spinner spTipoDoacao = (Spinner) findViewById(R.id.spItemDoacao);
+        final Spinner spTipoDoacao = (Spinner) findViewById(R.id.spTipoDoacao);
         final EditText etQuantidade = (EditText) findViewById(R.id.etQuantidade);
         final EditText etEnderecoDoacao = (EditText) findViewById(R.id.etEnderecoDoacao);
         final EditText etBairroDoacao = (EditText) findViewById(R.id.etBairroDoacao);
@@ -44,11 +45,11 @@ public class DoacaoActivity extends Activity {
         btnDoar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String tipoDoacao = spTipoDoacao.getSelectedItem().toString();
+                final String tipo_doacao = spTipoDoacao.getSelectedItem().toString();
                 final int quantidade = Integer.parseInt(etQuantidade.getText().toString());
-                final String enderedoDoacao = etEnderecoDoacao.getText().toString();
-                final String bairroDoacao = etBairroDoacao.getText().toString();
-                final String cidadeDoacao = etCidadeDoacao.getText().toString();
+                final String endereco_doacao = etEnderecoDoacao.getText().toString();
+                final String bairro_doacao = etBairroDoacao.getText().toString();
+                final String cidade_doacao = etCidadeDoacao.getText().toString();
                 final String observacao = etObservacao.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -60,6 +61,7 @@ public class DoacaoActivity extends Activity {
                             boolean sucesso = jsonResponse.getBoolean("sucesso");
 
                             if (sucesso) {
+                                Toast.makeText(getApplicationContext(),"Doação Registrada",Toast.LENGTH_LONG);
                                 Intent intent = new Intent(DoacaoActivity.this, AreaUsuarioActivity.class);
                                 DoacaoActivity.this.startActivity(intent);
                             } else {
@@ -76,7 +78,7 @@ public class DoacaoActivity extends Activity {
                     }
                 };
 
-                DoacaoRequest doacaoRequest = new DoacaoRequest(tipoDoacao, quantidade, enderedoDoacao, bairroDoacao, cidadeDoacao, observacao, responseListener);
+                DoacaoRequest doacaoRequest = new DoacaoRequest(tipo_doacao, quantidade, endereco_doacao, bairro_doacao, cidade_doacao, observacao, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(DoacaoActivity.this);
                 queue.add(doacaoRequest);
             }
