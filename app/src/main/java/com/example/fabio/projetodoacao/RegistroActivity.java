@@ -31,6 +31,10 @@ public class RegistroActivity extends Activity {
         final EditText etUsuario = (EditText) findViewById(R.id.etUsuario);
         final EditText etSenha = (EditText) findViewById(R.id.etSenha);
         final EditText etIdade = (EditText) findViewById(R.id.nIdade);
+        final EditText etEndereco = (EditText) findViewById(R.id.etEndereco);
+        final EditText etCEP = (EditText) findViewById(R.id.etCEP);
+        final EditText etCidade = (EditText) findViewById(R.id.etCidade);
+        final EditText etBairro = (EditText) findViewById(R.id.etBairro);
         final Button btnRegistro = (Button) findViewById(R.id.btnRegistrar);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +45,10 @@ public class RegistroActivity extends Activity {
                 final String nome_usuario = etUsuario.getText().toString();
                 final String senha = etSenha.getText().toString();
                 final int idade = Integer.parseInt(etIdade.getText().toString());
+                final String endereco = etEndereco.getText().toString();
+                final int cep = Integer.parseInt(etCEP.getText().toString());
+                final String cidade = etCidade.getText().toString();
+                final String bairro = etBairro.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
 
@@ -68,7 +76,7 @@ public class RegistroActivity extends Activity {
                     }
                 };
 
-                RegistroRequest registroRequest = new RegistroRequest(nome, sobrenome, nome_usuario, senha, idade, responseListener);
+                RegistroRequest registroRequest = new RegistroRequest(nome, sobrenome, nome_usuario, senha, idade, endereco, cep, cidade, bairro, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegistroActivity.this);
                 queue.add(registroRequest);
             }

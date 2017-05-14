@@ -31,9 +31,6 @@ public class DoacaoActivity extends Activity {
 
         final Spinner spTipoDoacao = (Spinner) findViewById(R.id.spTipoDoacao);
         final EditText etQuantidade = (EditText) findViewById(R.id.etQuantidade);
-        final EditText etEnderecoDoacao = (EditText) findViewById(R.id.etEnderecoDoacao);
-        final EditText etBairroDoacao = (EditText) findViewById(R.id.etBairroDoacao);
-        final EditText etCidadeDoacao = (EditText) findViewById(R.id.etCidadeDoacao);
         final EditText etObservacao = (EditText) findViewById(R.id.etObservacao);
         final Button btnDoar = (Button) findViewById(R.id.btnDoar);
 
@@ -47,9 +44,6 @@ public class DoacaoActivity extends Activity {
             public void onClick(View v) {
                 final String tipo_doacao = spTipoDoacao.getSelectedItem().toString();
                 final int quantidade = Integer.parseInt(etQuantidade.getText().toString());
-                final String endereco_doacao = etEnderecoDoacao.getText().toString();
-                final String bairro_doacao = etBairroDoacao.getText().toString();
-                final String cidade_doacao = etCidadeDoacao.getText().toString();
                 final String observacao = etObservacao.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -78,7 +72,7 @@ public class DoacaoActivity extends Activity {
                     }
                 };
 
-                DoacaoRequest doacaoRequest = new DoacaoRequest(tipo_doacao, quantidade, endereco_doacao, bairro_doacao, cidade_doacao, observacao, responseListener);
+                DoacaoRequest doacaoRequest = new DoacaoRequest(tipo_doacao, quantidade, observacao, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(DoacaoActivity.this);
                 queue.add(doacaoRequest);
             }

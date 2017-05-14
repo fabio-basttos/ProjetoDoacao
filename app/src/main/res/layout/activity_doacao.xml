@@ -30,44 +30,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/etEnderecoDoacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etQuantidade"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Endereço"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/etBairroDoacao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:ems="10"
-        android:hint="Bairro"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/etEnderecoDoacao"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/etCidadeDoacao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etBairroDoacao"
-        android:layout_marginTop="17dp"
-        android:ems="10"
-        android:hint="Cidade"
-        android:inputType="textPersonName" />
-
     <Button
         android:id="@+id/btnDoar"
         android:layout_width="match_parent"
@@ -85,13 +47,13 @@
         android:id="@+id/etObservacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/etCidadeDoacao"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:hint="Observações"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/etQuantidade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:id="@+id/spTipoDoacao"

@@ -17,14 +17,11 @@ public class DoacaoRequest extends StringRequest {
     private static final String REQUEST_DOACAO_URL = "http://doevida.pe.hu/insertDoacao.php";
     private Map<String, String> params;
 
-    public DoacaoRequest(String tipo_doacao, int quantidade, String endereco_doacao, String bairro_doacao, String cidade_doacao, String observacao, Response.Listener<String> listener){
+    public DoacaoRequest(String tipo_doacao, int quantidade, String observacao, Response.Listener<String> listener){
         super(Method.POST, REQUEST_DOACAO_URL, listener, null);
         params = new HashMap<>();
         params.put("tipo_doacao", tipo_doacao);
         params.put("quantidade", quantidade + "");//ADICIONAR ASPAS VAZIAS CONVERTE A IDADE (INT) EM UMA STRING PORQUE NÃO É POSSÍVEL MOSTRAR UM INT EM UM TEXT FIELD DIRETAMENTE
-        params.put("endereco_doacao", endereco_doacao);
-        params.put("bairro_doacao", bairro_doacao);
-        params.put("cidade_doacao", cidade_doacao);
         params.put("observacao", observacao);
 
     }
