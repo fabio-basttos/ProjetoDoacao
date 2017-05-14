@@ -28,21 +28,27 @@ public class DoacaoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doacao);
 
-        final EditText etTipoDoacao = (EditText) findViewById(R.id.etTipoDoacao);
+        final Spinner spTipoDoacao = (Spinner) findViewById(R.id.spItemDoacao);
         final EditText etQuantidade = (EditText) findViewById(R.id.etQuantidade);
+        final EditText etEnderecoDoacao = (EditText) findViewById(R.id.etEnderecoDoacao);
+        final EditText etBairroDoacao = (EditText) findViewById(R.id.etBairroDoacao);
+        final EditText etCidadeDoacao = (EditText) findViewById(R.id.etCidadeDoacao);
         final EditText etObservacao = (EditText) findViewById(R.id.etObservacao);
         final Button btnDoar = (Button) findViewById(R.id.btnDoar);
 
-        /*ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(DoacaoActivity.this
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(DoacaoActivity.this
                 , android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.tipo_doacao));
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        itemDoacaoSpinner.setAdapter(spinnerAdapter);*/
+        spTipoDoacao.setAdapter(spinnerAdapter);
 
         btnDoar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String tipoDoacao = etTipoDoacao.getText().toString();
+                final String tipoDoacao = spTipoDoacao.getSelectedItem().toString();
                 final int quantidade = Integer.parseInt(etQuantidade.getText().toString());
+                final String enderedoDoacao = etEnderecoDoacao.getText().toString();
+                final String bairroDoacao = etBairroDoacao.getText().toString();
+                final String cidadeDoacao = etCidadeDoacao.getText().toString();
                 final String observacao = etObservacao.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -70,7 +76,7 @@ public class DoacaoActivity extends Activity {
                     }
                 };
 
-                DoacaoRequest doacaoRequest = new DoacaoRequest(tipoDoacao, quantidade, observacao, responseListener);
+                DoacaoRequest doacaoRequest = new DoacaoRequest(tipoDoacao, quantidade, enderedoDoacao, bairroDoacao, cidadeDoacao, observacao, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(DoacaoActivity.this);
                 queue.add(doacaoRequest);
             }

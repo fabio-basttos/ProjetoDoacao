@@ -17,10 +17,15 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etSenhaLogin"
+        android:layout_alignLeft="@+id/etSenhaLogin"
+        android:layout_alignRight="@+id/etSenhaLogin"
+        android:layout_alignStart="@+id/etSenhaLogin"
         android:layout_below="@+id/etSenhaLogin"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
-        android:text="Logar" />
+        android:background="@android:color/holo_blue_light"
+        android:text="Login"
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:id="@+id/tvRegistrar"

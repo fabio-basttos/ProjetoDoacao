@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etUsuario"
+        android:fontFamily="monospace"
         android:text="Idade"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="16dp"
@@ -20,6 +21,11 @@
         android:id="@+id/tvWelcomeMsg"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="monospace"
         android:text="TESTE"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -40,25 +46,26 @@
         android:id="@+id/tvNomeUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvWelcomeMsg"
+        android:layout_marginTop="38dp"
+        android:fontFamily="monospace"
         android:text="Nome do Usuário"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="61dp"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/tvWelcomeMsg"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        tools:layout_editor_absoluteY="61dp" />
 
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvNomeUsuario"
         android:ems="10"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="76dp"
-        android:layout_below="@+id/tvNomeUsuario"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        tools:layout_editor_absoluteY="76dp" />
 
 </RelativeLayout>

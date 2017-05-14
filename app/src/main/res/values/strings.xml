@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ProjetoDoacao</string>
+
+    <string-array name="tipo_doacao">
+        <item>Calçado</item>
+        <item>Roupa</item>
+        <item>Alimento</item>
+        <item>Diversos</item>
+    </string-array>
 </resources>
